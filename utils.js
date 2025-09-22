@@ -46,9 +46,23 @@ export class Library {
 
   addBook(book) {
     this.items.push(book);
+    this.saveStorage();
+  };
+
+  saveStorage() {
+    localStorage.setItem("library", JSON.stringify(this.items));
+  };
+
+  loadStorage() {
+    const raw = localStorage.getItem("library");
+    if (raw) {
+      const arr = JSON.parse(raw);
+      this.items = arr.map(obj => new Book(obj.id, obj.title, obj.author, obj.copies))
+    };
   };
 
   listBooks() {
+    this.loadStorage();
     return this.items.map(b => b.getInfo());
   };
 
