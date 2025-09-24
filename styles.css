@@ -1,3 +1,22 @@
 body{
     background-color: rgb(96, 146, 189);
+    font-family: sans-serif;
+        margin: 20px;
+    }
+    
+    
+    
+    .hidden {
+        display: none;
+    }
+    
+    label {
+        display: block;
+        margin-top: 8px;
+    }
+    
+    input,
+    select,
+    button {
+        margin-top: 4px;
 }

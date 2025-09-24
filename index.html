@@ -5,20 +5,56 @@
     <meta charset="UTF-8">
     <title>Book Test</title>
 <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
-    <h1>Book Creator</h1>
+<h1>Library Manager</h1>
 
-    <label>ID: <input id="id" type="number"></label><br>
-    <label>Title: <input id="title" type="text"></label><br>
-    <label>Author: <input id="author" type="text"></label><br>
-    <label>Copies: <input id="copies" type="number"></label><br>
+<label>
+    Type:
+    <select id="typeInput">
+        <option value="book">Book</option>
+        <option value="ebook">EBook</option>
+    </select>
+</label>
 
-    <button id="create">Create Book</button>
-    <button id="show">Show Books</button>
+<label>
+    Title:
+    <input id="titleInput" type="text" />
+</label>
 
-    <label id="result"></label><br>
+<label>
+    Author:
+    <input id="authorInput" type="text" />
+</label>
+
+<label id="copies-label">
+    Copies:
+    <input id="copiesInput" type="number" />
+</label>
+
+<label id="filesize-label" class="hidden">
+    File Size (MB):
+    <input id="filesizeInput" type="number" />
+</label>
+
+<button id="createBtn">Add Book</button>
+<button id="showBtn">Show Library</button>
+
+
+<label>
+    Borrow by ID:
+    <input id="borrowIdInput" type="number" />
+    <button id="borrowBtn">Borrow</button>
+</label>
+<label>
+    Return by ID:
+    <input id="returnIdInput" type="number" />
+    <button id="returnBtn">Return</button>
+</label>
+
+<div id="result" style="margin-top:20px; white-space:pre-line;"></div>
 
     <script type="module" src="main.js"></script>
 </body>
