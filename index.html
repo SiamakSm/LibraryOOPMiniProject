@@ -2,61 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Book Test</title>
-<link rel="stylesheet" href="styles.css">
-
+  <meta charset="UTF-8">
+  <title>Library Manager</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-<h1>Library Manager</h1>
+  <h1>Library Manager</h1>
 
-<label>
-    Type:
-    <select id="typeInput">
-        <option value="book">Book</option>
-        <option value="ebook">EBook</option>
-    </select>
-</label>
+  <div class="container">
+    <!-- LEFT PANEL: ADD BOOK -->
+    <div class="panel">
+      <h2>Add a Book</h2>
 
-<label>
-    Title:
-    <input id="titleInput" type="text" />
-</label>
+      <label>
+        Type:
+        <select id="typeInput">
+          <option value="book">Book</option>
+          <option value="ebook">EBook</option>
+        </select>
+      </label>
 
-<label>
-    Author:
-    <input id="authorInput" type="text" />
-</label>
+      <label>
+        Title:
+        <input id="titleInput" type="text" />
+      </label>
 
-<label id="copies-label">
-    Copies:
-    <input id="copiesInput" type="number" />
-</label>
+      <label>
+        Author:
+        <input id="authorInput" type="text" />
+      </label>
 
-<label id="filesize-label" class="hidden">
-    File Size (MB):
-    <input id="filesizeInput" type="number" />
-</label>
+      <label id="copies-label">
+        Copies:
+        <input id="copiesInput" type="number" />
+      </label>
 
-<button id="createBtn">Add Book</button>
-<button id="showBtn">Show Library</button>
+      <label id="filesize-label" class="hidden">
+        File Size (MB):
+        <input id="filesizeInput" type="number" />
+      </label>
 
+      <button id="createBtn">Add Book</button>
+    </div>
 
-<label>
-    Borrow by ID:
-    <input id="borrowIdInput" type="number" />
-    <button id="borrowBtn">Borrow</button>
-</label>
-<label>
-    Return by ID:
-    <input id="returnIdInput" type="number" />
-    <button id="returnBtn">Return</button>
-</label>
+    <!-- RIGHT PANEL: ACTIONS + RESULT -->
+    <div class="panel right-panel">
+      <div class="actions">
+        <div class="borrow-return">
+          <label>
+            Borrow by ID:
+            <input id="borrowIdInput" type="number" />
+            <button id="borrowBtn">Borrow</button>
+          </label>
 
-<div id="result" style="margin-top:20px; white-space:pre-line;"></div>
+          <label>
+            Return by ID:
+            <input id="returnIdInput" type="number" />
+            <button id="returnBtn">Return</button>
+          </label>
+        </div>
 
-    <script type="module" src="main.js"></script>
+        <button id="showBtn" class="show-btn">Show Library</button>
+      </div>
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
 </body>
 
 </html>
